@@ -5,6 +5,7 @@ FactoryBot.define do
     company
     team { association :team, company: company }
     employee { association :employee, team: team, company: company }
+    generated_at { rand(12).days.ago }
 
     trait :voted do
       result { [10, 20, 30].sample }

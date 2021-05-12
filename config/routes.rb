@@ -81,6 +81,7 @@ Rails.application.routes.draw do
       resources :feedback, only: %i[index create]
       resources :teams, except: %i[destroy]
       resources :employees, except: %i[destroy]
+      get 'next_vote/:id', to: 'next_vote#show', as: :next_vote
     end
     resource :slack, only: [], controller: :slack do
       collection do

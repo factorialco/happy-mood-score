@@ -25,6 +25,10 @@ class Vote < ApplicationRecord
     def last_without_comment
       where(token: nil).where(description: nil).order(generated_at: :desc).first
     end
+
+    def last_request
+      where.not(token: nil).where(result: nil).order(generated_at: :desc).first
+    end
   end
 
   private
