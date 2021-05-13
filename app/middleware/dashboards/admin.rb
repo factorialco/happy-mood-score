@@ -26,7 +26,7 @@ module Dashboards
     attr_reader :company
 
     def company_gauge
-      Dashboards::Gauge.new(company).generate
+      Graphs::Gauge.new(company).generate
     end
 
     def log

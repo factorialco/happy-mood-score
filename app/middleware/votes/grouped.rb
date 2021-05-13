@@ -6,13 +6,26 @@ module Votes
       @grouped_votes = grouped_votes
     end
 
-    def count
+    def summary
       {
         hms: hms,
         involvement: involvement,
         total_bad: total_bad,
         total_fine: total_fine,
         total_good: total_good,
+      }
+    end
+
+    def detailed
+      {
+        hms: hms,
+        involvement: involvement,
+        total_bad: total_bad,
+        total_fine: total_fine,
+        total_good: total_good,
+        total_votes: total_votes,
+        total_count: total_count,
+        total_pending: total_pending
       }
     end
 
@@ -46,6 +59,10 @@ module Votes
 
     def total_good
       grouped_votes[30].to_i
+    end
+
+    def total_pending
+      total_count - total_votes
     end
 
     def total_votes

@@ -13,19 +13,19 @@ module Counters
 
       def update_employee(employee)
         grouped_votes = employee.votes.group(:result).count
-        total = Votes::Grouped.new(grouped_votes).count
+        total = Votes::Grouped.new(grouped_votes).summary
         employee.update(hms: total[:hms], involvement: total[:involvement])
       end
 
       def update_team(team)
         grouped_votes = team.votes.group(:result).count
-        total = Votes::Grouped.new(grouped_votes).count
+        total = Votes::Grouped.new(grouped_votes).summary
         team.update(hms: total[:hms], involvement: total[:involvement])
       end
 
       def update_company(company)
         grouped_votes = company.votes.group(:result).count
-        total = Votes::Grouped.new(grouped_votes).count
+        total = Votes::Grouped.new(grouped_votes).summary
         company.update(hms: total[:hms], involvement: total[:involvement])
       end
     end

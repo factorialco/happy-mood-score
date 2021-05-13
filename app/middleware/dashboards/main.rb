@@ -23,7 +23,7 @@ module Dashboards
     attr_reader :employee
 
     def employee_gauge
-      Dashboards::Gauge.new(employee).generate
+      Graphs::Gauge.new(employee).generate
     end
   end
 end

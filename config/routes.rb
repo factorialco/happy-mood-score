@@ -77,6 +77,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v3 do
       resource :company, only: %i[show]
+      resource :dashboard, only: %i[show], controller: :dashboard
       resources :high5, only: %i[index create], controller: :high5
       resources :feedback, only: %i[index create]
       resources :teams, except: %i[destroy]

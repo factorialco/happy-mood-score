@@ -21,12 +21,11 @@ module Graphs
     attr_reader :start_date, :end_date, :company
 
     def count
-      Votes::Grouped.new(votes).count
+      Votes::Grouped.new(votes).summary
     end
 
     def votes
       company.votes.where(generated_at: start_date..end_date).group(:result).count
     end
-
   end
 end

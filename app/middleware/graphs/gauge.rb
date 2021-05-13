@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Dashboards
+module Graphs
   class Gauge
     def initialize(entity, options={})
       @entity = entity
