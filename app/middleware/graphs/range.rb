@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Graphs
   class Range
     def initialize(company, start_date, end_date)

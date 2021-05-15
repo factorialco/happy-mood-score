@@ -17,7 +17,7 @@ RSpec.describe Logs::Employee do
       create_list(:vote, 2, :voted, result: 30, employee: employee, generated_at: wednesday, description: 'something said')
       create(:vote, :voted, result: 10, employee: employee, generated_at: tuesday)
       create_list(:vote, 3, employee: employee, generated_at: wednesday)
-      create_list(:vote, 2, employee: employee)
+      create_list(:vote, 2, employee: employee, generated_at: 4.months.ago)
       create_list(:activity, 2, event: high5, sender: employee, created_at: wednesday)
       create_list(:activity, 3, event: high5, sender: other_employee, employee: employee, created_at: tuesday)
 

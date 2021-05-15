@@ -9,7 +9,7 @@ module Api
     end
 
     def feedback
-      # Rails also uses action
+      # Avoid Rails overriding action with the controller method
       params[:action] = request.request_parameters['action']
 
       render plain: Slack::Vote.create(params)

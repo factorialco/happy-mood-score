@@ -32,16 +32,7 @@ module Slack
     attr_reader :callback_id, :token, :action, :team_id
 
     def action_to_number
-      case action
-      when 'good'
-        30
-      when 'fine'
-        20
-      when 'bad'
-        10
-      else
-        0
-      end
+      VOTE_RESULT[action.to_sym]
     end
 
     def valid_vote?

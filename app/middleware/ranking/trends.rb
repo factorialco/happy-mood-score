@@ -29,7 +29,7 @@ module Ranking
     end
 
     def company_gauge
-      Dashboards::Gauge.new(company, { hms_id: 'company-hms', involvement_id: 'company-inv' }).generate
+      Graphs::Gauge.new(company, { hms_id: 'company-hms', involvement_id: 'company-inv' }).generate
     end
 
     def company_ranking
@@ -40,7 +40,7 @@ module Ranking
     end
 
     def employee_ranking
-      Dashboards::Gauge.new(employee).generate
+      Graphs::Gauge.new(employee).generate
     end
 
     def team
@@ -48,7 +48,7 @@ module Ranking
     end
 
     def team_gauge
-      Dashboards::Gauge.new(team, { hms_id: 'team-hms', involvement_id: 'team-inv' }).generate
+      Graphs::Gauge.new(team, { hms_id: 'team-hms', involvement_id: 'team-inv' }).generate
     end
 
     def team_ranking
