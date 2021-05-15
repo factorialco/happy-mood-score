@@ -1,7 +1,8 @@
-# Happy Mood Score
-
 ![license](https://img.shields.io/github/license/jorgegorka/happy-mood-score.svg)
 ![Code climate](https://img.shields.io/codeclimate/maintainability/jorgegorka/happy-mood-score.svg)
+[![CircleCI](https://circleci.com/gh/jorgegorka/happy-mood-score.svg?style=svg)](https://app.circleci.com/projects/project-dashboard/github/jorgegorka/)
+
+# Happy Mood Score
 
 ## Happy teams and motivated employees
 
