@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-describe Admin::RulesController do
+xdescribe Admin::RulesController do
   let(:name) { 'Toundra' }
   let(:reward) { create(:reward) }
   let(:rule) { create(:rule) }

@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-describe Admin::RewardsController do
+xdescribe Admin::RewardsController do
   let(:name) { 'Toundra' }
   let(:category) { :badge }
   let(:params) do

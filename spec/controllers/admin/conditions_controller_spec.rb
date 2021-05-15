@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-describe Admin::ConditionsController do
+xdescribe Admin::ConditionsController do
   let(:operation) { :points }
   let(:rule) { create(:rule) }
   let(:params) do

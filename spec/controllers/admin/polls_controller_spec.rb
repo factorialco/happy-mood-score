@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-describe Admin::PollsController do
+xdescribe Admin::PollsController do
   let(:company) { create(:company) }
   let(:poll) { create(:poll, company: company) }
   let(:admin) { create(:employee, :admin, company: company) }

@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-describe Admin::EventsController do
+xdescribe Admin::EventsController do
   let(:name) { 'download pdf' }
   let(:category) { :badge }
   let(:params) do

@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-describe Admin::AchievementsController do
+xdescribe Admin::AchievementsController do
   let(:admin) { create(:employee, :admin) }
 
   before { login_user admin.user }
