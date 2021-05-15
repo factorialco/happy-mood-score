@@ -34,9 +34,6 @@ jobs:
             gem install bundler:2.2.9
 
             bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - run:
-        name: precompile assets
-        command: bundle exec rails assets:precompile
 
       - save_cache:
           paths:
@@ -46,6 +43,7 @@ jobs:
       # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
+      - run: bundle exec rails assets:precompile
 
       # run tests!
       - run:
