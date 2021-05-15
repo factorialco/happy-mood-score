@@ -80,6 +80,7 @@ Rails.application.routes.draw do
       resource :dashboard, only: %i[show], controller: :dashboard
       resources :high5, only: %i[index create], controller: :high5
       resources :feedback, only: %i[index create]
+      resources :notes, path: '1on1'
       resources :teams, except: %i[destroy]
       resources :employees, except: %i[destroy]
       get 'next_vote/:id', to: 'next_vote#show', as: :next_vote
