@@ -1,5 +1,8 @@
 # Happy Mood Score
 
+![license](https://img.shields.io/github/license/jorgegorka/happy-mood-score.svg)
+![Code climate](https://img.shields.io/codeclimate/maintainability/jorgegorka/happy-mood-score.svg)
+
 ## Happy teams and motivated employees
 
 Feedback and employee engagement tool for agile companies, startups or companies with remote employees, distributed teams or digital nomads. It is free to use and 100% Open Source.
