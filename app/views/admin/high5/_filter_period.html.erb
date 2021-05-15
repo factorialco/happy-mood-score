@@ -12,14 +12,14 @@
   <div class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg" data-select-target="dropdown">
     <div class="rounded-md bg-white shadow-xs">
       <div class="py-1">
-        <%= link_to t('ideasList.lastWeek'), admin_high5_index_url(period: 'week'), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" %>
-        <%= link_to t('ideasList.lastMonth'), admin_high5_index_url(period: 'month'), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" %>
-        <%= link_to t('ideasList.lastQuarter'), admin_high5_index_url(period: 'quarter'), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" %>
-        <%= link_to t('ideasList.lastYear'), admin_high5_index_url(period: 'year'), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" %>
+        <%= link_to t('ideasList.lastWeek'), admin_high5_url(id: @employee.id, period: 'week'), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" %>
+        <%= link_to t('ideasList.lastMonth'), admin_high5_url(id: @employee.id, period: 'month'), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" %>
+        <%= link_to t('ideasList.lastQuarter'), admin_high5_url(id: @employee.id, period: 'quarter'), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" %>
+        <%= link_to t('ideasList.lastYear'), admin_high5_url(id: @employee.id, period: 'year'), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" %>
       </div>
       <div class="border-t border-gray-100"></div>
       <div class="py-1">
-        <%= link_to t('ideasList.viewAll'), admin_high5_index_url, class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" %>
+        <%= link_to t('ideasList.viewAll'), admin_high5_url(id: @employee.id), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" %>
       </div>
     </div>
   </div>

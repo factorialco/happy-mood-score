@@ -6,7 +6,7 @@ module Admin
 
     def show
       @employee = current_company.employees.find(params[:id])
-      @high5s = @employee.high5s
+      @high5s = High5::Finder.new(current_company, find_params.merge(receiver_id: @employee.id)).all
     end
 
     def search
@@ -25,6 +25,10 @@ module Admin
 
     def employees_list
       Employees::Finder.new(current_company, params)
+    end
+
+    def find_params
+      params.permit(:period)
     end
   end
 end

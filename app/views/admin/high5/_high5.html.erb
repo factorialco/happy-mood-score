@@ -1,0 +1,17 @@
+<li class="px-4 border-b border-gray-300 pb-4">
+  <div class="px-4 flex flex-col space-x-3">
+    <div class="flex">
+      <p class="text-sm font-semibold text-gray-700">
+        <%= t 'hi5EmployeeActivity.givenBy' %> <%= high5.sender.name %>
+      </p>
+      <div class="ml-2 text-sm">
+        <span class="text-gray-500 font-medium">
+          <%= l high5.created_at, format: :short %>
+        </span>
+      </div>
+    </div>
+    <p class="mt-1 text-sm text-gray-700">
+    <%= high5.description %>
+    </p>
+  </div>
+</li>

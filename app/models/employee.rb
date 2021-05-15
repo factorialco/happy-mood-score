@@ -37,9 +37,6 @@ class Employee < ApplicationRecord
     deleted_at.present?
   end
 
-  def high5s
-  end
-
   def last_log
     historical_logs.order(generated_on: :desc).first
   end

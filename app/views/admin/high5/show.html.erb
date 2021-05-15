@@ -1,16 +1,18 @@
 <turbo-frame id="high5-results">
-    <div class="md:flex md:items-center md:justify-between">
-      <div class="flex-1 min-w-0">
-        <h2 class="text-xl font-bold leading-7 text-purple-900 sm:text-2xl sm:leading-9 sm:truncate">
-          <%=  @employee.name %> <%# currentFilter  %>
-        </h2>
-      </div>
-      <div class="mt-4 flex md:mt-0 md:ml-4 items-center">
-        <%= render partial: 'admin/high5/filter_period'  %>
-      </div>
+  <div class="md:flex md:items-center md:justify-between">
+    <div class="flex-1 min-w-0">
+      <h2 class="text-xl font-bold leading-7 text-purple-900 sm:text-2xl sm:leading-9 sm:truncate">
+        <%= @employee.name %>
+      </h2>
     </div>
-    <div class="mt-6">
-      <h3 class="mb-6 text-lg leading-6 font-medium text-gray-900">
-      </h3>
+    <div class="mt-4 flex md:mt-0 md:ml-4 items-center">
+      <%= render partial: 'admin/high5/filter_period'  %>
     </div>
+  </div>
+  <h3 class="mt-6 text-xl text-center text-purple-900 sm:leading-9 sm:truncate">
+    <%= @high5s.size %> <%= filter_text(params[:period]) %>
+  </h2>
+  <ul class="mt-6 space-y-8">
+    <%= render partial: 'admin/high5/high5', collection: @high5s %>
+  </ul>
 </turbo-frame>
