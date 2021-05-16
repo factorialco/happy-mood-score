@@ -16,7 +16,7 @@ class Company < ApplicationRecord
   validates :email, presence: true
   validates :slug, uniqueness: { case_sensitive: false }
 
-  before_create :add_slug
+  before_validation :add_slug
   before_create :default_settings
   before_update :update_job_delivery
   after_create :add_new_account
@@ -90,6 +90,8 @@ class Company < ApplicationRecord
   end
 
   def add_slug
+    return if slug.present? || name.blank?
+
     self.slug = name.parameterize
   end
 

@@ -6,6 +6,7 @@ User.destroy_all
 Team.destroy_all
 Employee.destroy_all
 Event.destroy_all
+HistoricalLog.destroy_all
 Rule.destroy_all
 Reward.destroy_all
 Poll.destroy_all
