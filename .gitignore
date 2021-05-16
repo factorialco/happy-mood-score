@@ -32,6 +32,7 @@
 /public/assets
 .byebug_history
 
+/lib/tasks/migration
 
 /public/packs
 /public/packs-test
@@ -40,8 +41,12 @@
 yarn-debug.log*
 .yarn-integrity
 
+/config/database.yml
+/config/storage.yml
+/config/cable.yml
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /config/credentials/test.key
 /config/credentials/development.key
 /config/credentials/production.key
+/config/credentials/production.yml.enc
