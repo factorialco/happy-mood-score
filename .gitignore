@@ -50,3 +50,4 @@ yarn-debug.log*
 /config/credentials/development.key
 /config/credentials/production.key
 /config/credentials/production.yml.enc
+/config/environments/production.rb
