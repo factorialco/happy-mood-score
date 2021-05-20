@@ -3,13 +3,13 @@ module Admin
     before_action :find_vote
 
     def create
-      @vote.replies.create!(description: params[:description], employee: current_employee)
+      reply = @vote.replies.create!(description: params[:description], employee: current_employee)
 
       respond_to do |format|
         format.turbo_stream do
-          render turbo_stream: turbo_stream.update(
-            "vote_#{@vote.id}",
-            partial: 'admin/feedback/feedback', locals: { feedback: @vote }
+          render turbo_stream: turbo_stream.append(
+            "replies-list-vote_#{@vote.id}",
+            partial: 'admin/feedback/reply', locals: { reply: reply }
           )
         end
         format.html { redirect_to admin_feedback_index_url, notice: I18n.t('feedbackList.sentOk') }

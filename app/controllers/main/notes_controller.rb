@@ -1,5 +1,7 @@
 module Main
   class NotesController < ::UserController
+    before_filter :find_employee, only: :index
+
     def index
       @notes = note_list
     end
@@ -33,6 +35,12 @@ module Main
     end
 
     private
+
+    def find_employee
+      return if params[:employee_id].blank?
+
+      @employee = current_company.employees.active.find_by(id: params[:employee_id])
+    end
 
     def note_list
       params[:closed].to_i == 1 ? current_employee.notes.closed : current_employee.notes.active

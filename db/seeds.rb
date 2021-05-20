@@ -15,7 +15,9 @@ language = Language.create!(name: 'English', code: 'en')
 Language.create!(name: 'Español', code: 'es')
 
 company = Company.create!(name: 'Party time', email: 'admin@test.com', language: language)
-company.teams.create!(name: Faker::Book.title)
+45.times do
+  company.teams.create!(name: "#{Faker::Book.title}-#{rand(999)}")
+end
 User.first.update(password: '111111111', password_confirmation: '111111111')
 User.first.activate!
 

@@ -41,8 +41,8 @@ Rails.application.routes.draw do
         get 'global'
       end
     end
+    resources :votes, only: :index
 
-    # admin
     resources :employees do
       resource :permission, only: %i[update destroy]
       resource :archive, only: %i[update destroy]

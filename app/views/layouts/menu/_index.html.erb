@@ -1,0 +1,17 @@
+<div class="hidden lg:flex lg:flex-shrink-0">
+  <div class="flex flex-col w-64 border-r border-gray-200 bg-white">
+    <div class="flex flex-col h-0 flex-1 bg-white">
+      <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+        <h1 class="flex-shrink-0 flex justify-center items-center">
+          <a href="https://www.happymoodscore.com" title="Free talent retention and feedback tool.">
+            <%= image_tag 'hms-logo-dark.png', alt: 'Happy Mood Score' %>
+          </a>
+        </h1>
+        <nav class="mt-5 flex-1 px-2 space-y-1">
+          <%= render 'layouts//menu/side/index' %>
+        </nav>
+      </div>
+      <%= render 'layouts/menu/user/index' %>
+    </div>
+  </div>
+</div>

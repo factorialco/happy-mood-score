@@ -19,7 +19,7 @@ module Admin
     private
 
     def company_params
-      params.permit(%i[])
+      params.permit(%i[frequency weekday hour])
     end
 
     def find_company

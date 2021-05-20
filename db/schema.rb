@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_04_24_150109) do
 
-  create_table "achievements", charset: "utf8", force: :cascade do |t|
+  create_table "achievements", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "uuid", limit: 36, null: false
     t.bigint "employee_id"
     t.bigint "reward_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_achievements_on_uuid"
   end
 
-  create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
+  create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", charset: "utf8", force: :cascade do |t|
+  create_table "active_storage_blobs", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -46,13 +46,13 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "active_storage_variant_records", charset: "utf8", force: :cascade do |t|
+  create_table "active_storage_variant_records", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "activities", charset: "utf8", force: :cascade do |t|
+  create_table "activities", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "uuid", limit: 36, null: false
     t.bigint "employee_id"
     t.bigint "event_id"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_activities_on_uuid"
   end
 
-  create_table "companies", charset: "utf8", force: :cascade do |t|
+  create_table "companies", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "language_id"
     t.string "uuid", limit: 36, null: false
     t.string "name"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_companies_on_uuid"
   end
 
-  create_table "conditions", charset: "utf8", force: :cascade do |t|
+  create_table "conditions", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "uuid", limit: 36, null: false
     t.bigint "rule_id"
     t.bigint "event_id"
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_conditions_on_uuid"
   end
 
-  create_table "employees", charset: "utf8", force: :cascade do |t|
+  create_table "employees", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "language_id"
     t.bigint "company_id"
@@ -157,7 +157,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_employees_on_uuid"
   end
 
-  create_table "events", charset: "utf8", force: :cascade do |t|
+  create_table "events", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "company_id"
     t.string "uuid", limit: 36, null: false
     t.string "name", limit: 50, null: false
@@ -173,7 +173,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_events_on_uuid"
   end
 
-  create_table "historical_logs", charset: "utf8", force: :cascade do |t|
+  create_table "historical_logs", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "employee_id"
     t.bigint "team_id"
     t.bigint "company_id"
@@ -206,7 +206,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_historical_logs_on_uuid"
   end
 
-  create_table "languages", charset: "utf8", force: :cascade do |t|
+  create_table "languages", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "uuid", limit: 36, null: false
     t.string "name", limit: 50
     t.string "code", limit: 8
@@ -215,7 +215,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_languages_on_uuid"
   end
 
-  create_table "notes", charset: "utf8", force: :cascade do |t|
+  create_table "notes", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "employee_id"
     t.bigint "receiver_id"
     t.string "uuid", limit: 36, null: false
@@ -230,7 +230,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_notes_on_uuid"
   end
 
-  create_table "poll_options", charset: "utf8", force: :cascade do |t|
+  create_table "poll_options", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "poll_id"
     t.string "uuid", limit: 36, null: false
     t.string "title"
@@ -242,7 +242,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_poll_options_on_uuid"
   end
 
-  create_table "poll_votes", charset: "utf8", force: :cascade do |t|
+  create_table "poll_votes", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "poll_id"
     t.string "uuid", limit: 36, null: false
     t.string "result"
@@ -254,7 +254,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_poll_votes_on_uuid"
   end
 
-  create_table "polls", charset: "utf8", force: :cascade do |t|
+  create_table "polls", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "company_id"
     t.string "uuid", limit: 36, null: false
     t.boolean "active", default: false
@@ -272,7 +272,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_polls_on_uuid"
   end
 
-  create_table "replies", charset: "utf8", force: :cascade do |t|
+  create_table "replies", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "uuid", limit: 36, null: false
     t.bigint "vote_id"
     t.bigint "employee_id"
@@ -284,7 +284,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["vote_id"], name: "index_replies_on_vote_id"
   end
 
-  create_table "rewards", charset: "utf8", force: :cascade do |t|
+  create_table "rewards", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "company_id"
     t.integer "category"
     t.string "uuid", limit: 36, null: false
@@ -300,7 +300,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_rewards_on_uuid"
   end
 
-  create_table "rules", charset: "utf8", force: :cascade do |t|
+  create_table "rules", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "uuid", limit: 36, null: false
     t.string "name", limit: 50, null: false
     t.bigint "reward_id"
@@ -312,7 +312,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_rules_on_uuid"
   end
 
-  create_table "teams", charset: "utf8", force: :cascade do |t|
+  create_table "teams", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "company_id"
     t.string "uuid", limit: 36, null: false
     t.string "name"
@@ -332,7 +332,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_teams_on_uuid"
   end
 
-  create_table "users", charset: "utf8", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "uuid", limit: 36, null: false
     t.string "email", null: false
     t.string "crypted_password"
@@ -359,7 +359,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["uuid"], name: "index_users_on_uuid"
   end
 
-  create_table "votes", charset: "utf8", force: :cascade do |t|
+  create_table "votes", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "company_id"
     t.bigint "team_id"
     t.bigint "employee_id"

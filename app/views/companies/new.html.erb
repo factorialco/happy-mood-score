@@ -45,9 +45,7 @@
           <div class="mt-6">
             <div class="text-md text-center leading-5">
               <%= t('signup.haveAnAccount') %>
-              <a href="/login" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150" data-turbo="false">
-                <%= t('signup.logIn') %>
-              </a>
+              <%= link_to t('signup.logIn'), login_url, class: "font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150", data: { turbo: "false" } %>
             </div>
           </div>
         </div>
