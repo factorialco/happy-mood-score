@@ -23,3 +23,11 @@
   </svg>
   <%= t 'sideAdmin.1on1' %>
 <% end %>
+<% if current_user.admin? %>
+  <%= link_to admin_dashboard_index_url, class: "group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 transition ease-in-out duration-150 #{main_menu_class(main_notes_path)}" do %>
+    <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path>
+    </svg>
+    <%= t 'sideAdmin.adminArea' %>
+  <% end %>
+<% end %>

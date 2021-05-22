@@ -50,14 +50,14 @@ Rails.application.routes.draw do
         post :search
       end
     end
-    resources :teams
     resources :jobs, only: %i[create destroy]
     resources :companies, only: %i[show edit update destroy] do
       resources :deliveries, only: %i[index update]
       resource :slack, only: %i[show update destroy], controller: :slack
-      resources :removes, only: %i[index destroy]
     end
     resources :uploads, only: %i[new create]
+    resources :teams
+    resource :remove, only: %i[show destroy]
 
     # gamification
     resources :events

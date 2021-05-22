@@ -99,15 +99,17 @@ class Company < ApplicationRecord
     self.timezone = 'London'
     self.frequency = :weekly
     self.weekday = 'friday'
+    self.hour = '17:00'
+    self.next_request_at = Jobs::Dates.new(self).next_request
+  end
+
+  def delivery_active_and_values_changed?
+    next_request_at.present? && (frequency_changed? || weekday_changed? || hour_changed?)
   end
 
   def update_job_delivery
     return unless delivery_active_and_values_changed?
 
     self.next_request_at = Jobs::Dates.new(self).next_request
-  end
-
-  def delivery_active_and_values_changed?
-    next_request_at.present? && (frequency_changed? || weekday_changed? || hour_changed?)
   end
 end

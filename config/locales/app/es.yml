@@ -703,6 +703,7 @@ es:
     ideas: 'Ideas'
     activity: 'Mi actividad'
     1on1: '1on1 Apuntes'
+    adminArea: 'Administración'
 
   sideUser:
     dashboard: 'Cuadro de mando'

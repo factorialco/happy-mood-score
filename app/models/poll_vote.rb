@@ -5,6 +5,9 @@ class PollVote < ApplicationRecord
   before_create :add_option_title
 
   scope :with_comments, -> { where.not(comment: nil) }
+  scope :positive, -> { where(result: 30) }
+  scope :neutral, -> { where(result: 20) }
+  scope :negative, -> { where(result: 10) }
 
   private
 

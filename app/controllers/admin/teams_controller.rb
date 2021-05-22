@@ -1,9 +1,13 @@
 module Admin
   class TeamsController < AdminController
-    before_action :find_team, only: %i[edit update destroy]
+    before_action :find_team, only: %i[show edit update destroy]
 
     def index
       @teams = current_company.teams.order(employees_count: :desc).page(params[:page]).per(15)
+    end
+
+    def show
+      @employees = @team.employees.page(params[:page])
     end
 
     def new

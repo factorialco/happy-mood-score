@@ -41,6 +41,10 @@ class Employee < ApplicationRecord
     historical_logs.order(generated_on: :desc).first
   end
 
+  def link_info
+    Rails.application.routes.url_helpers.main_dashboard_index_path(id: id)
+  end
+
   def management?
     manager? || admin? || god?
   end

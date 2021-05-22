@@ -7,14 +7,18 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def set_locale
-    I18n.locale = current_user&.language&.code || lang_from_params
+  def default_locale
+    lang_from_params || current_user&.language&.code || 'en'
   end
 
   def lang_from_params
-    return 'en' if params[:lang].blank?
+    return if params[:lang].blank?
 
     available_languages = Language.all.pluck(:code)
     available_languages.include?(params[:lang]) ? params[:lang].to_s : 'en'
+  end
+
+  def set_locale
+    I18n.locale = default_locale
   end
 end

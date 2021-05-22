@@ -26,15 +26,14 @@
                 <%= t 'companyDeleteAccount.deleteAccount'  %>
               </h3>
               <p class="mt-2 text-sm leading-5 text-red-700">
-                <%= t 'companyDeleteAccount.sadNews'  %> <%= link_to t('companyDeleteAccount.contactUs'), new_contact_url, class: "inline-flex items-center font-medium text-red-600 hover:text-red-500 transition ease-in-out duration-150" %>
+                <%= t 'companyDeleteAccount.sadNews'  %> <%= link_to t('companyDeleteAccount.contactUs'), new_main_contact_url, class: "inline-flex items-center font-medium text-red-600 hover:text-red-500 transition ease-in-out duration-150" %>
               </p>
             </div>
           </div>
         </div>
         <div class="mt-4">
-          <%= tw_form_with model: [:admin, @company], method: :delete, class: "px-10 py-4", data: { turbo: false } do |form| %>
-            <%= form.text_input :confirm, autofocus: true, label: t('companyDeleteAccount.deleteWord'), message: t('companyDeleteAccount.undone') %>
-            <%# formInput name="confirm-text" type="text" autofocus=true required=true showInvalid=invalidName labelMessage=(t 'companyDeleteAccount.deleteWord') hintText=(t 'companyDeleteAccount.undone') errorText=(t 'companyDeleteAccount.confirmationText') %>
+          <%= tw_form_with url: admin_remove_url, method: :delete, class: "px-10 py-4", data: { turbo: false } do |form| %>
+            <%= form.text_input :confirm, autofocus: true, label: t('companyDeleteAccount.deleteWord'), message: @error ? t('companyDeleteAccount.confirmationText') : t('companyDeleteAccount.undone') %>
             <div class="mt-4">
               <button type="submit"
                 class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700 transition ease-in-out duration-150">
@@ -43,6 +42,6 @@
             </div>
             <% end %>
         </div>
-        <p class="mt-4 text-sm leading-6 font-medium text-gray-700"><%= t 'companyDeleteAccount.thankYou'  %></p>
+        <p class="ml-10 mt-4 text-lg leading-6 font-medium text-gray-700"><%= t 'companyDeleteAccount.thankYou'  %></p>
       </div>
     </div>

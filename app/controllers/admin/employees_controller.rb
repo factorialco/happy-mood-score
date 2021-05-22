@@ -52,7 +52,7 @@ module Admin
     end
 
     def employees_list
-      Employees::Finder.new(current_company, params).all
+      Employees::Finder.new(current_company, params).all.page(params[:page]).per(20)
     end
 
     def find_employee
