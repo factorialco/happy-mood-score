@@ -3,6 +3,7 @@
 module VotesHelper
   def vote_weight(entity, vote_type)
     total_votes = entity.results_good + entity.results_fine + entity.results_bad
+
     return 0 if total_votes.zero?
 
     case vote_type
@@ -18,7 +19,7 @@ module VotesHelper
   end
 
   def result_to_colour(result)
-    case result
+    case result.to_i
     when 10
       'bg-red-100 text-red-800'
     when 20

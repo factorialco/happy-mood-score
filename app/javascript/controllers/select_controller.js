@@ -7,11 +7,14 @@ export default class extends Controller {
     event.preventDefault();
 
     if (this.dropdownTarget.classList.value.includes("hidden")) {
-      this.dropdownTarget.classList.add('block');
-      this.dropdownTarget.classList.remove('hidden');
+      this.updateClasses('block', 'hidden');
     } else {
-      this.dropdownTarget.classList.remove('block');
-      this.dropdownTarget.classList.add('hidden');
+      this.updateClasses('hidden', 'block');
     }
+  }
+
+  updateClasses(toAdd, toRemove) {
+    this.dropdownTarget.classList.remove(toRemove);
+    this.dropdownTarget.classList.add(toAdd);
   }
 }

@@ -1,9 +1,7 @@
 <tr>
   <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
     <span class="rounded-md shadow-sm">
-      <a href="" class="inline-flex items-center font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
-       <%= row.name %>
-      </a>
+      <%= link_to row.name, row.link_info, class: "inline-flex items-center font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150", data: { turbo: false } %>
     </span>
   </td>
   <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 text-gray-500">

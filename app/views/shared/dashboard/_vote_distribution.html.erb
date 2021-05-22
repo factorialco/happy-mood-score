@@ -1,19 +1,19 @@
 <div class="mt-6">
   <h3 class="text-lg leading-6 font-medium text-gray-900">
-    <%=  t 'leftDashboard.distribution'  %>
+    <%= t 'leftDashboard.distribution' %>
   </h3>
   <div class="mt-6 grid grid-cols-1 rounded-lg bg-white overflow-hidden shadow md:grid-cols-3">
     <div>
       <div class="px-4 py-5 sm:p-6">
         <dl>
           <dt class="text-base font-semibold leading-6 font-normal text-green-700">
-            <%=  t 'leftDashboard.happy'  %>
+            <%= t 'leftDashboard.happy' %>
           </dt>
           <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
             <div class="flex items-baseline text-2xl leading-8 font-semibold text-indigo-600">
-              <%=  vote_weight votes, 'good'  %>%
+              <%= vote_weight votes, 'good' %>%
               <span class="ml-2 text-sm leading-5 font-medium text-gray-500">
-                <%=  t 'leftDashboard.votes'  %> <%= votes.results_good %>
+                <%= t 'leftDashboard.votes' %> <%= votes.results_good %>
               </span>
             </div>
           </dd>
@@ -30,7 +30,7 @@
             <div class="flex items-baseline text-2xl leading-8 font-semibold text-indigo-600">
               <%= vote_weight votes, 'fine' %>%
               <span class="ml-2 text-sm leading-5 font-medium text-gray-500">
-                <%= t 'leftDashboard.votes'  %> <%=  votes.results_fine  %>
+                <%= t 'leftDashboard.votes' %> <%= votes.results_fine %>
               </span>
             </div>
           </dd>
@@ -41,7 +41,7 @@
       <div class="px-4 py-5 sm:p-6">
         <dl>
           <dt class="text-base font-semibold leading-6 font-normal text-red-700">
-            <%=  t 'leftDashboard.bad'  %>
+            <%= t 'leftDashboard.bad' %>
           </dt>
           <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
             <div class="flex items-baseline text-2xl leading-8 font-semibold text-indigo-600">

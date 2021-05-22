@@ -14,6 +14,10 @@ class Team < ApplicationRecord
     historical_logs.order(generated_on: :desc).first
   end
 
+  def link_info
+    Rails.application.routes.url_helpers.admin_team_path(self)
+  end
+
   private
 
   def add_empty_log

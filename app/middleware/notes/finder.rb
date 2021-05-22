@@ -17,9 +17,9 @@ module Notes
     attr_reader :employee, :params, :notes
 
     def apply_filters
-      return if params[:receiver_id].blank?
+      return if params[:employee_id].blank?
 
-      @notes = notes.where(receiver_id: params[:receiver_id])
+      @notes = notes.where(receiver_id: params[:employee_id])
     end
 
     def notes

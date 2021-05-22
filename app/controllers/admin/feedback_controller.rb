@@ -5,7 +5,7 @@ module Admin
 
     def index
       @any_feedback = current_employee.company.votes.any?
-      @feedback = feedback.page(params[:page].to_i).order(:updated_at)
+      @feedback = feedback.page(params[:page].to_i).order(:updated_at).per(15)
       @filter = session[:feedback]
     end
 

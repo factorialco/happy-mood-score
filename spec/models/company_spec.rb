@@ -24,6 +24,18 @@ RSpec.describe Company, type: :model do
   it { should define_enum_for(:frequency).with_values(%i[daily weekly monthly]) }
   it { should define_enum_for(:weekday).with_values(%i[monday tuesday wednesday thursday friday]) }
 
+  describe 'after create' do
+    before { subject.save! }
+
+    context 'delivery information' do
+      its(:timezone) { is_expected.to eql 'London' }
+      its(:frequency) { is_expected.to eql 'weekly' }
+      its(:weekday) { is_expected.to eql 'friday' }
+      its(:hour) { is_expected.to eql '17:00' }
+      its(:next_request_at) { is_expected.to be_present }
+    end
+  end
+
   describe 'before save' do
     let(:next_request_at) {}
     let(:company) { create(:company, next_request_at: next_request_at) }

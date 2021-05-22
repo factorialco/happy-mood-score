@@ -15,7 +15,9 @@ language = Language.create!(name: 'English', code: 'en')
 Language.create!(name: 'Español', code: 'es')
 
 company = Company.create!(name: 'Party time', email: 'admin@test.com', language: language)
-company.teams.create!(name: Faker::Book.title)
+25.times do
+  company.teams.create!(name: "#{Faker::Book.title}-#{rand(999)}")
+end
 User.first.update(password: '111111111', password_confirmation: '111111111')
 User.first.activate!
 
@@ -23,8 +25,8 @@ manager = company.employees.create!(name: 'Mille Petrozza', email: 'user@test.co
 manager.user.update(password: '111111111', password_confirmation: '111111111')
 manager.user.activate!
 
-13.times do
-  employee = company.employees.create!(name: Faker::DcComics.name, email: Faker::Internet.email, language: Language.all.sample, team: company.teams.sample)
+23.times do
+  employee = company.employees.create!(name: "#{Faker::DcComics.name}-#{rand(999)}", email: Faker::Internet.email, language: Language.all.sample, team: company.teams.sample)
   employee.votes.create!
 end
 

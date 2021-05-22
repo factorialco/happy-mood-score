@@ -4,8 +4,13 @@
       <%= title %>
     </h1>
   </div>
-  <div class="mt-4 flex md:mt-0 md:ml-4">
+  <div class="mt-4 flex md:mt-0 md:ml-4 items-center">
     <div class="mr-4">
+      <span class="rounded-md shadow-sm">
+        <%= link_to t('employeeRanking.backToDashboard'), admin_dashboard_index_url, class: "inline-flex items-center font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150" %>
+      </span>
+    </div>
+    <div>
       <span class="rounded-md shadow-sm">
         <%= link_to link, class: "inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-yellow-700 bg-yellow-100 hover:bg-yellow-50 focus:outline-none focus:border-yellow-300 focus:shadow-outline-yellow active:bg-yellow-200 transition ease-in-out duration-150" do %>
           <svg class="-ml-1 mr-2 h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">

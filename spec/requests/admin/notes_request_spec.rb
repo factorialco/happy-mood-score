@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 describe 'Admin::NotesController' do
@@ -21,6 +19,7 @@ describe 'Admin::NotesController' do
 
   describe '#create' do
     let(:params) { {} }
+
     subject do
       post admin_notes_url, params: params
       response

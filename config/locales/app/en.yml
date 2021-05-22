@@ -132,7 +132,7 @@ en:
     undone: 'This process can NOT be undone'
     deleteMyAccount: 'Delete my account!'
     thankYou: 'Thanks for using Happy Mood Score'
-    confirmationText: 'As this process can not be undone. We require that you write the word DELETE and then press the delete button. This process will help us prevent accidental account deletions and loss of data.'
+    confirmationText: "This process can not be undone so, it is mandatory that you write the word DELETE. We want to be sure that you don't accidentally lose all your data."
 
   companyEmailDelivery:
     emptyTitle: 'There are no employees yet'
@@ -691,6 +691,7 @@ en:
     ideas: 'Ideas'
     activity: 'My activity'
     1on1: '1 on 1 notes'
+    adminArea: 'Admin area'
 
   sideUser:
     dashboard: 'Dashboard'

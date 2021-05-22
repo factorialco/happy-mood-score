@@ -29,10 +29,7 @@
       </div>
     <% else  %>
     <div class="mt-6">
-      <%# > dashboardUserVotes resultsHappy=poll.resultsGood resultsFine=poll.resultsFine resultsBad=poll.resultsBad  %>
-      <%# #if dashboardInfo %>
-      <%# > pollFeedbackGraph poll=poll  %>
-      <%# /if %>
+      <%= render 'shared/dashboard/vote_distribution', votes: @votes  %>
     </div>
     <%= render partial: 'admin/polls/messages_list', locals: { messages: @poll.poll_votes.with_comments }  %>
     <% end %>

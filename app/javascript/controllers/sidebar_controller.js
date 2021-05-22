@@ -11,12 +11,15 @@ export default class extends Controller {
   toggle(event) {
     event.preventDefault();
     if (this.menuTarget.classList.value === "hidden") {
-      this.menuTarget.classList.add(this.showClass);
-      this.menuTarget.classList.remove(this.hideClass);
+      this.updateClasses(this.showClass, this.hideClass);
     } else {
-      this.menuTarget.classList.remove(this.showClass);
-      this.menuTarget.classList.add(this.hideClass);
+      this.updateClasses(this.hideClass, this.showClass);
     }
+  }
+
+  updateClasses(toAdd, toRemove) {
+    this.menuTarget.classList.remove(toRemove);
+    this.menuTarget.classList.add(toAdd);
   }
 
   toggleUserMenu(event) {

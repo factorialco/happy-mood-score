@@ -13,11 +13,14 @@ export default class extends Controller {
 
   updateFrequency(newFrequency) {
     if (newFrequency === "daily") {
-      this.selectTarget.classList.remove('block');
-      this.selectTarget.classList.add('hidden');
+      this.updateClasses('hidden', 'block');
     } else {
-      this.selectTarget.classList.add('block');
-      this.selectTarget.classList.remove('hidden');
+      this.updateClasses('block', 'hidden');
     }
+  }
+
+  updateClasses(toAdd, toRemove) {
+    this.selectTarget.classList.remove(toRemove);
+    this.selectTarget.classList.add(toAdd);
   }
 }

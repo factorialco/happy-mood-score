@@ -6,7 +6,9 @@ module Admin
       @polls = current_company.polls
     end
 
-    def show; end
+    def show
+      @votes = Polls::Votes.new(@poll)
+    end
 
     def new
       @poll = current_company.polls.new

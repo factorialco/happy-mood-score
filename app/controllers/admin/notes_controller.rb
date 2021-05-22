@@ -1,8 +1,8 @@
 module Admin
   class NotesController < ::AdminController
+    before_action :find_employees, only: :index
+
     def index
-      @employees = current_employee.team.employees.active.order(:name)
-      @votes = Feedback::Finder.new(current_employee, params.merge(team_id: current_employee.team.id)).all
       @notes = Notes::Finder.new(current_employee, params).all
     end
 
@@ -33,6 +33,15 @@ module Admin
     end
 
     private
+
+    def find_employees
+      @employees = current_employee.team.employees.active
+      if params[:employee_id].present?
+        @employees = @employees.where(id: params[:employee_id])
+      end
+
+      @employees.order(:name)
+    end
 
     def note_params
       params.require(:note).permit(%i[description receiver_id shared])
