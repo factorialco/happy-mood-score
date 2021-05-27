@@ -28,7 +28,7 @@ RSpec.describe Notes::Finder do
     end
 
     context 'when filtered by employee' do
-      let(:params) { { receiver_id: employee2.id } }
+      let(:params) { { employee_id: employee2.id } }
 
       it { is_expected.to eql 3 }
     end

@@ -96,10 +96,10 @@ class Company < ApplicationRecord
   end
 
   def default_settings
-    self.timezone = 'London'
-    self.frequency = :weekly
-    self.weekday = 'friday'
-    self.hour = '17:00'
+    self.timezone = 'London' if timezone.blank?
+    self.frequency = :weekly if frequency.blank?
+    self.weekday = 'friday' if weekday.blank?
+    self.hour = '17:00' if hour.blank?
     self.next_request_at = Jobs::Dates.new(self).next_request
   end
 
