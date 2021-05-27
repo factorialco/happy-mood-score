@@ -26,6 +26,9 @@
               <tbody>
               <%= render @events %>
               </tbody>
+              <tfoot class="py-4">
+                <%= paginate @events %>
+              </tfoot>
             </table>
           </div>
         </div>

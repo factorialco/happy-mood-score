@@ -23,11 +23,11 @@
             <tbody>
             <%= render @activities %>
             </tbody>
+            <tfoot class="py-4">
+              <%= paginate @activities %>
+            </tfoot>
           </table>
         </div>
       </div>
     </div>
-  </div>
-  <div class="py-4">
-    <%= paginate @activities %>
   </div>
