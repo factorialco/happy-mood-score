@@ -1,6 +1,6 @@
 module Main
   class NotesController < ::UserController
-    before_filter :find_employee, only: :index
+    before_action :find_employee, only: :index
 
     def index
       @notes = note_list
