@@ -5,9 +5,10 @@ require 'rails_helper'
 RSpec.describe Companies::Feedback do
   let(:next_request_at) {}
   let(:deleted_at) {}
-  let(:company) { create(:company, next_request_at: next_request_at, deleted_at: deleted_at) }
+  let(:company) { create(:company, deleted_at: deleted_at) }
 
   describe '.request' do
+    before { company.update(next_request_at: next_request_at) }
     subject { described_class.request }
 
     context 'when company has feedback request enabled' do

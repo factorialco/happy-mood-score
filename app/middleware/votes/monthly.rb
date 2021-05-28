@@ -56,6 +56,33 @@ module Votes
         data: {
           labels: graph.labels,
           datasets: graph.datasets
+        },
+        options: {
+          responsive: true,
+          interaction: {
+            mode: 'index',
+            intersect: false,
+          },
+          stacked: false,
+          scales: {
+            "#{I18n.t('hmsTrends.hms')}": {
+              display: true,
+              type: 'linear',
+              position: 'left',
+            },
+            "#{I18n.t('hmsTrends.involvement')}": {
+              display: true,
+              type: 'linear',
+              position: 'right',
+              tick: {
+                min: 0,
+                max: 100
+              },
+              grid: {
+                drawOnChartArea: false,
+              },
+            }
+          }
         }
       }
     end

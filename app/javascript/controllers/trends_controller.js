@@ -12,7 +12,8 @@ export default class extends Controller {
 
     new Chart(ctx, {
       type: 'line',
-      data: this.infoValue['data']
+      data: this.infoValue['data'],
+      options: this.infoValue['options']
     });
   }
 }

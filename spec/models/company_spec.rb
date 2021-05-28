@@ -38,7 +38,9 @@ RSpec.describe Company, type: :model do
 
   describe 'before save' do
     let(:next_request_at) {}
-    let(:company) { create(:company, next_request_at: next_request_at) }
+    let(:company) { create(:company) }
+
+    before { company.update(next_request_at: next_request_at) }
 
     subject { company.update(params) }
 

@@ -22,6 +22,9 @@ module Graphs
       {
         label: I18n.t('hmsTrends.hms'),
         data: results.map { |result| result[:hms] },
+        yAxisID: I18n.t('hmsTrends.hms'),
+        borderColor: 'rgb(91, 33, 182)',
+        backgroundColor: 'rgb(196, 181, 253)',
       }
     end
 
@@ -29,6 +32,9 @@ module Graphs
       {
         label: I18n.t('hmsTrends.involvement'),
         data: results.map { |result| result[:involvement] },
+        yAxisID: I18n.t('hmsTrends.involvement'),
+        borderColor: 'rgb(31, 41, 55)',
+        backgroundColor: 'rgb(229, 231, 235)',
       }
     end
   end
