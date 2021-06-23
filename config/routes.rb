@@ -111,6 +111,8 @@ Rails.application.routes.draw do
   post 'votes', to: 'votes#create'
   post '/graphql', to: 'graphql#execute'
   get 'login' => 'user_sessions#new', as: :login
+  get 'main', to: redirect('/main/dashboard')
+  get 'admin', to: redirect('/admin/dashboard')
   post 'logout' => 'user_sessions#destroy', as: :logout
 
   root to: 'companies#new'

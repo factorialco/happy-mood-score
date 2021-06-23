@@ -6,7 +6,7 @@ module Rewards
 
     class << self
       def acquired(activity)
-        Reward.active.excluding_ids(activity.employee.reward_ids).all.map { |reward| new(reward, activity).achieved }.compact
+        activity.employee.company.rewards.active.excluding_ids(activity.employee.reward_ids).all.map { |reward| new(reward, activity).achieved }.compact
       end
     end
 

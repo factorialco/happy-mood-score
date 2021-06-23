@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+p "deleting data"
 Language.destroy_all
 Company.destroy_all
 User.destroy_all
@@ -11,10 +10,12 @@ Rule.destroy_all
 Reward.destroy_all
 Poll.destroy_all
 
+p "creating company"
 language = Language.create!(name: 'English', code: 'en')
 Language.create!(name: 'Español', code: 'es')
 
 company = Company.create!(name: 'Party time', email: 'admin@test.com', language: language)
+p "creating teams"
 25.times do
   company.teams.create!(name: "#{Faker::Book.title}-#{rand(999)}")
 end
@@ -25,11 +26,13 @@ manager = company.employees.create!(name: 'Mille Petrozza', email: 'user@test.co
 manager.user.update(password: '111111111', password_confirmation: '111111111')
 manager.user.activate!
 
+p "creating employees"
 23.times do
   employee = company.employees.create!(name: "#{Faker::DcComics.name}-#{rand(999)}", email: Faker::Internet.email, language: Language.all.sample, team: company.teams.sample)
   employee.votes.create!
 end
 
+p "creating votes"
 48.times do
   employee = Employee.all.sample
   vote = employee.votes.create!
@@ -49,6 +52,7 @@ end
 
 poll = company.polls.create!(name: 'My amazing first pool', title: 'Are things really amazing?', description: 'Tell me now')
 
+p "creating poll votes"
 5.times do
   poll.poll_votes.create! result: [10, 20, 30].sample, comment: [Faker::Movies::PrincessBride.quote, nil].sample
 end

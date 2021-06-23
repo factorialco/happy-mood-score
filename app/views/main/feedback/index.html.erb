@@ -11,6 +11,9 @@
         <ul class="space-y-8">
           <%= render partial: 'main/feedback/feedback', collection: @feedback  %>
         </ul>
+        <div class="mt-4">
+          <%= paginate @feedback %>
+        </div>
       </div>
     </turbo-frame>
   <% else %>

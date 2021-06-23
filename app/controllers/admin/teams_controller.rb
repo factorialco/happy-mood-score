@@ -3,7 +3,7 @@ module Admin
     before_action :find_team, only: %i[show edit update destroy]
 
     def index
-      @teams = current_company.teams.order(employees_count: :desc).page(params[:page]).per(15)
+      @teams = current_company.teams.order(employees_count: :desc).page(params[:page]).per(8)
     end
 
     def show
