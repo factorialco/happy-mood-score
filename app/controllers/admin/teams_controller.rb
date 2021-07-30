@@ -18,7 +18,7 @@ module Admin
 
     def update
       if @team.update(team_params)
-        redirect_to admin_teams_url, notice: 'autoForm.teamUpdated'
+        redirect_to admin_teams_url, notice: I18n.t('autoForm.teamUpdated')
       else
         render 'edit'
       end
@@ -28,7 +28,7 @@ module Admin
       @team = current_company.teams.create(team_params)
 
       if @team.valid?
-        redirect_to admin_teams_url, notice: 'autoForm.teamCreated'
+        redirect_to admin_teams_url, notice: I18n.t('autoForm.teamCreated')
       else
         render 'new'
       end
@@ -36,7 +36,7 @@ module Admin
 
     def destroy
       @team.destroy
-      redirect_to admin_teams_url, notice: 'autoForm.teamDeleted'
+      redirect_to admin_teams_url, notice: I18n.t('autoForm.teamDeleted')
     end
 
     private
