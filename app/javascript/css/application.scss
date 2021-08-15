@@ -79,3 +79,9 @@ a.text-link:hover {
 }
 
 @import "tailwindcss/utilities";
+
+@responsive {
+  .text-7xl {
+    font-size: 5rem;
+  }
+}

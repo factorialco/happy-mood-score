@@ -96,6 +96,20 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :features do
+    get 'employee-feedback', to: 'features#feedback'
+  end
+
+  namespace :es do
+    get '', to: 'spanish#index'
+    get 'caracteristicas', to: 'features#index'
+    get 'slack', to: 'slack#index'
+    get 'precio', to: 'price#index'
+    get 'contactar', to: 'contact#index'
+    get 'condiciones-uso', to: 'privacy#index'
+    get 'politica-privacidad', to: 'privacy#policy'
+  end
+
   resources :companies, only: %i[new create]
   resources :user_sessions, only: %i[create]
   resources :password_resets, only: %i[new create edit update]
@@ -115,5 +129,5 @@ Rails.application.routes.draw do
   get 'admin', to: redirect('/admin/dashboard')
   post 'logout' => 'user_sessions#destroy', as: :logout
 
-  root to: 'companies#new'
+  root to: 'home#index'
 end

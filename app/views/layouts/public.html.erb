@@ -11,11 +11,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track' => 'reload' %>
   </head>
   <body class="font-sans antialiased text-gray-900">
-    <main class="py-6">
-      <% flash.each do |type, message| %>
-        <%= render 'shared/notice', type: type, message: message %>
-      <% end %>
-      <%= yield %>
-    </main>
+    <div class="relative bg-gray-50 overflow-hidden">
+      <div class="relative pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
+        <%= render partial: 'es/layout/menu_top' %>
+        <main class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
+          <% flash.each do |type, message| %>
+            <%= render 'shared/notice', type: type, message: message %>
+          <% end %>
+          <%= yield %>
+          <slot />
+        </main>
+      </div>
+    </div>
+    <%= render partial: 'es/layout/footer' %>
   </body>
 </html>

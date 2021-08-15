@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     return if params[:lang].blank?
 
     available_languages = Language.all.pluck(:code)
-    available_languages.include?(params[:lang]) ? params[:lang].to_s : 'en'
+    available_languages.include?(params[:lang].to_s) ? params[:lang].to_s : 'en'
   end
 
   def set_locale

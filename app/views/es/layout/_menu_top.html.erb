@@ -1,0 +1,142 @@
+<div class="max-w-screen-xl mx-auto px-4 sm:px-6"
+     data-controller="menu"
+     data-menu-show-class="block"
+     data-menu-hide-class="hidden">
+  <nav class="relative flex items-center justify-between sm:h-10 lg:justify-center">
+    <div class="flex items-center flex-1 lg:absolute lg:inset-y-0 lg:left-0">
+      <div class="flex items-center justify-between w-full lg:w-auto">
+        <%= link_to image_tag('frontend/hms-logo-dark.png', class: "h-8 w-auto sm:h-16", alt: "Happy Mood Score"), es_url, 'aria-label': 'home' %>
+        <div class="-mr-2 flex items-center lg:hidden">
+          <button type="button" data-action="click->menu#toggle"
+                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                                id="main-menu" aria-label="Main menu" aria-haspopup="true">
+                                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="hidden lg:block">
+      <a href="/es/caracteristicas"
+        title="Todo lo que Happy Mood Score puede ofrecerte."
+        class="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+        Características
+      </a>
+      <a href="/es/slack"
+        title="Happy Mood Score se integra completamente con Slack"
+        class="ml-10 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+        Slack
+      </a>
+      <a href="/es/precio"
+        title="Happy Mood Score es 100% gratis, compruébalo"
+        class="ml-10 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+        Precio
+      </a>
+      <%= link_to "Contactar", es_contactar_url, title: "Accede a tu cuenta de Happy Mood Score", class: "ml-10 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out" %>
+      <a href="/"
+        title="Happy Mood Score in english"
+        class="ml-10 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+        English
+      </a>
+    </div>
+    <div class="hidden lg:absolute lg:flex lg:items-center lg:justify-end lg:inset-y-0 lg:right-0">
+      <span class="inline-flex rounded-md shadow mr-4">
+        <a href="https://happymoodscore.com/login?lang=es"
+          title="Accede a tu cuenta"
+          class="inline-flex items-center px-4 py-2 text-base leading-6 font-medium rounded-md text-teal-600 hover:text-teal-500 focus:outline-none focus:border-teal-300 focus:shadow-outline-teal active:bg-gray-50 active:text-teal-700 transition duration-150 ease-in-out">
+          Acceder
+        </a>
+      </span>
+      <span class="inline-flex rounded-md shadow">
+        <a
+          href="https://happymoodscore.com/signup?lang=es"
+          title="Crear cuenta gratis"
+          class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md
+          text-teal-600 bg-white hover:text-teal-500 focus:outline-none focus:border-teal-300 focus:shadow-outline-teal
+          active:bg-gray-50 active:text-teal-700 transition duration-150 ease-in-out">
+          Nueva cuenta
+        </a>
+      </span>
+    </div>
+  </nav>
+
+  <div data-menu-target="mobile" class="hidden">
+    <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right">
+      <div class="rounded-lg shadow-md">
+        <div
+          class="rounded-lg bg-white shadow-xs overflow-hidden"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="main-menu">
+          <div class="px-5 pt-4 flex items-center justify-between">
+            <div>
+              <%= image_tag 'frontend/hms-logo-stacked.png', class: "h-8 w-auto", alt: "Happy Mood Score para recursos humanos" %>
+            </div>
+            <div class="-mr-2">
+              <button
+                data-action="click->menu#toggle"
+                type="button"
+                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500
+                hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150
+                ease-in-out"
+                aria-label="Close menu">
+                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="px-2 pt-2 pb-3">
+            <a
+              href="/es/caracteristicas"
+              title="La aplicación más sencilla y potente para recursos humanos"
+              on:click={toggleMenu}
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50
+              focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+              role="menuitem">
+              Características
+            </a>
+            <a
+              href="/es/slack"
+              title="Utiliza Happy Mood Score desde Slack"
+              on:click={toggleMenu}
+              class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900
+              hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+              role="menuitem">
+              Slack
+            </a>
+            <a
+              href="/es/precio"
+              title="El plan gratuito de HMS incluye ilimitados usuarios"
+              on:click={toggleMenu}
+              class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900
+              hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+              role="menuitem">
+              Precio
+            </a>
+            <a
+              href="https://happymoodscore.com/login?lang=es"
+              title="Accede a tu cuenta de Happy Mood Score"
+              on:click={toggleMenu}
+              class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900
+              hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+              role="menuitem">
+              Accede a tu cuenta
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://happymoodscore.com/signup?lang=es"
+              on:click={toggleMenu}
+              class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100
+              hover:text-indigo-700 focus:outline-none focus:bg-gray-100 focus:text-indigo-700 transition duration-150
+              ease-in-out"
+              role="menuitem">
+              Crea tu cuenta gratuita
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
