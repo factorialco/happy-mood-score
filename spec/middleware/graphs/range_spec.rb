@@ -51,7 +51,7 @@ RSpec.describe Graphs::Range do
         total_bad: 2,
         total_fine: 4,
         total_good: 3,
-        period: "#{(I18n.t('date.month_names'))[start_date.month]} 01"
+        period: I18n.l(start_date.to_date, format: :short)
       }
     end
 

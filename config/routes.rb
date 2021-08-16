@@ -1,4 +1,9 @@
+require 'sidekiq/web'
+require 'admin_constraint'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/admin/queue_dashboard', :constraints => AdminConstraint.new
+
   namespace :main do
     resources :contacts, only: %i[new create]
     resources :dashboard, only: %i[index]
@@ -106,6 +111,7 @@ Rails.application.routes.draw do
     get 'slack', to: 'slack#index'
     get 'precio', to: 'price#index'
     get 'contactar', to: 'contact#index'
+    post 'contactar', to: 'contact#create'
     get 'condiciones-uso', to: 'privacy#index'
     get 'politica-privacidad', to: 'privacy#policy'
   end

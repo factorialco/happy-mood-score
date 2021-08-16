@@ -43,7 +43,6 @@
           <dl class="mt-8 space-y-6">
             <dt><span class="sr-only">Email</span></dt>
             <dd class="flex text-base text-teal-50">
-              <!-- Heroicon name: outline/mail -->
               <svg class="flex-shrink-0 w-6 h-6 text-teal-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -68,38 +67,25 @@
             </li>
           </ul>
         </div>
-
-        <!-- Contact form -->
         <div class="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
           <h3 class="text-lg font-medium text-warm-gray-900">Todos los campos son requeridos</h3>
+          <%= tw_form_with url: es_contactar_path, method: :post, class: "px-10 py-4" do |form| %>
           <form action="#" method="POST" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
             <div class="sm:col-span-2">
-              <label for="name" class="block text-sm font-medium text-warm-gray-900">Nombre</label>
-              <div class="mt-1">
-                <input type="text" name="name" id="name" required class="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md">
-              </div>
+              <%= form.text_input :name, label: 'Nombre', autofocus: true %>
             </div>
             <div class="sm:col-span-2">
-              <label for="email" class="block text-sm font-medium text-warm-gray-900">Email</label>
-              <div class="mt-1">
-                <input type="email" name="email" id="email" required class="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md">
-              </div>
+              <%= form.email_input :email %>
             </div>
             <div class="sm:col-span-2">
-              <div class="flex justify-between">
-                <label for="message" class="block text-sm font-medium text-warm-gray-900">Mensaje</label>
-                <span id="message-max" class="text-sm text-warm-gray-500">Max. 800 caracteres</span>
-              </div>
-              <div class="mt-1">
-                <textarea id="message" name="message" rows="4" required class="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border border-warm-gray-300 rounded-md" aria-describedby="message-max"></textarea>
-              </div>
+              <%= form.area_input :message, rows: 5, label: 'Mensaje' %>
             </div>
             <div class="sm:col-span-2 sm:flex sm:justify-end">
               <button type="submit" class="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 sm:w-auto">
                 Enviar mensaje
               </button>
             </div>
-          </form>
+          <% end %>
         </div>
       </div>
     </div>
