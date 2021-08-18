@@ -105,6 +105,10 @@ Rails.application.routes.draw do
     get 'employee-feedback', to: 'features#feedback'
   end
 
+  scope module: 'en' do
+    resources :blogs, only: %i[index show], path: 'blog'
+  end
+
   namespace :es do
     get '', to: 'spanish#index'
     get 'caracteristicas', to: 'features#index'
