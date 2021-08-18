@@ -6,9 +6,9 @@ RSpec.describe Logs::Company do
     let(:employee) { company.employees.first }
     let(:other_employee) { create(:employee, company: company) }
     let(:wednesday) { Time.current.prev_occurring(:wednesday) }
-    let(:tuesday) { Time.current.prev_occurring(:tuesday) }
     let(:start_date) { wednesday.beginning_of_week }
     let(:end_date) { wednesday.end_of_week }
+    let(:tuesday) { start_date.next_occurring(:tuesday) }
     let(:high5) { company.events.high5.first }
 
     before do
