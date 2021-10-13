@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_150109) do
+ActiveRecord::Schema.define(version: 2021_08_18_080153) do
 
   create_table "achievements", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "uuid", limit: 36, null: false
@@ -270,6 +270,23 @@ ActiveRecord::Schema.define(version: 2021_04_24_150109) do
     t.index ["company_id"], name: "index_polls_on_company_id"
     t.index ["slug"], name: "index_polls_on_slug"
     t.index ["uuid"], name: "index_polls_on_uuid"
+  end
+
+  create_table "posts", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+    t.bigint "language_id", null: false
+    t.string "uuid", limit: 36, null: false
+    t.string "title", null: false
+    t.text "summary"
+    t.string "permalink", null: false
+    t.datetime "published_at"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["language_id"], name: "index_posts_on_language_id"
+    t.index ["permalink"], name: "index_posts_on_permalink"
+    t.index ["published_at"], name: "index_posts_on_published_at"
+    t.index ["title"], name: "index_posts_on_title"
+    t.index ["uuid"], name: "index_posts_on_uuid"
   end
 
   create_table "replies", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
